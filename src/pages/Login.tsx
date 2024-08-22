@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import Loader from "react-js-loader";
 import Button from "../components/Button";
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-// import logo from "../assets/images/ai-logo.svg";
+import logo from "../assets/logoAi.png";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "@firebase/auth";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Login = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       console.log("User created successfully");
       localStorage.setItem('user', JSON.stringify(auth.currentUser))
-      navigate("/periodicTable");
+      navigate("/dashboard");
     } catch (createError) {
       console.error("User creation failed:", createError);
       if (email === auth.currentUser?.email) {
@@ -62,7 +62,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("Login successful");
       localStorage.setItem('user', JSON.stringify(auth.currentUser))
-      navigate("/periodicTable");
+      navigate("/dashboard");
     } catch (signInError) {
       console.error("Login failed:", signInError);
       if (email === auth.currentUser?.email) {
@@ -80,12 +80,12 @@ const Login = () => {
       <div className="logincontain m-auto">
         <div className="right-side">
           <div className="d-flex align-items-center justify-content-center mb-5">
-            {/* <img src={logo} alt="Logo" /> */}
+            <img src={logo} alt="Logo" className="logoIcon"/>
           </div>
           <div className="px-2">
             <div className="w-100">
               <div className="input-container">
-                {/* <FaUser className="input-image" /> */}
+                <FaUser className="input-image" />
                 <input
                   type="text"
                   className="form-control mb-3"
@@ -100,7 +100,7 @@ const Login = () => {
             </div>
             <div className="w-100">
               <div className="input-container">
-                {/* <RiLockPasswordFill className="input-image" /> */}
+                <RiLockPasswordFill className="input-image" />
                 <input
                   type="password"
                   className="form-control"
