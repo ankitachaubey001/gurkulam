@@ -234,7 +234,7 @@
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-    width: 30%;
+    width: 100%
   }
   
   .logincontain .left-side {
@@ -376,7 +376,7 @@
   }
   
   .logincontain {
-    width: 40%; 
+    width: 100%; 
     background-color: #ffffff;
     border: 1px solid #ccc;
     padding: 20px;
@@ -1065,39 +1065,8 @@ tbody tr {
   /* color: white; */
 }
 
-.main {
-  height: 100vh;
-  background-color: #f0f0f0;
-}
 
-.logincontain {
-  max-width: 1000px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 20px #286fac;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  width: 30%;
-}
 
-.logincontain .left-side {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-}
-
-.logincontain .left-side img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.logincontain .right-side {
-  flex: 1;
-  padding: 30px;
-}
 
 .heading-text {
   color: #333333;
@@ -1223,4 +1192,3 @@ background: linear-gradient(to left, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Fi
 width: 100%;
 }
 
-/* #18150E */

@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Learning = ({ servicesData }:any) => {
+  localStorage.setItem('key','heloooo')
+  const value =localStorage.getItem('key')
+  console.log("first",value)
+  localStorage.removeItem('key')
   return (
     <section className='section_two 'style={{paddingBottom:'90px'}}>
       <h1 className='text-center pt-5 pb-5'>A Collection of Resources For all Thinks eLearning</h1>
