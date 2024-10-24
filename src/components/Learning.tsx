@@ -1,44 +1,69 @@
-import PropTypes from 'prop-types'; 
-import React from 'react';
 
-const Learning = ({ servicesData }:any) => {
-  localStorage.setItem('key','heloooo')
-  const value =localStorage.getItem('key')
-  console.log("first",value)
-  localStorage.removeItem('key')
+import { Development, IT_Value, Quality, Team } from '../libs/contanst';
+import style from '../styles/learning.module.css';
+
+export const Learning = () => {
+ 
+  var divStyle = {
+    backgroundImage: 'url(' + "https://res.cloudinary.com/highereducation/image/upload/c_scale,w_750/f_auto,fl_lossy,q_auto:eco/v1532988563/TheBestColleges.org/images/study-active-recall.jpg" + ')',
+  };
+  var divStyle1 = {
+    backgroundImage: 'url(' + 'https://res.cloudinary.com/highereducation/image/upload/c_scale,w_750/f_auto,fl_lossy,q_auto:eco/v1532988563/TheBestColleges.org/images/study-active-recall.jpg' + ')',
+  };
+  var divStyle2 = {
+    backgroundImage: 'url(' + 'https://res.cloudinary.com/highereducation/image/upload/c_scale,w_750/f_auto,fl_lossy,q_auto:eco/v1532988563/TheBestColleges.org/images/study-active-recall.jpg' + ')',
+  };
+  const data = [
+    {
+      image: divStyle,
+      content: "  Quality defines us. We provide high quality \n Apps and  Websites. The main thing behind \n building a good business is Goodwill.We get\n a 4.5 star  rating and also have many  \n positive reviews on google.",
+     title : Quality
+    },
+    {
+      image: divStyle1,
+      content: " Teamwork is the ability to work together toward a common vision.We are small Team doing big Things. We work on Agile methodology which accelerates the achievement of task easily.",
+      title : Team
+    },
+    {
+      image: divStyle2,
+      content: "  We develop native as well as hybrid apps for both android and iOS platforms.A native vs hybrid app is an applicationdeveloped to fully comply with the requirements  of a particular operating system.",
+      title : Development
+    }
+    ]
+ 
+
   return (
-    <section className='section_two 'style={{paddingBottom:'90px'}}>
-      <h1 className='text-center pt-5 pb-5'>A Collection of Resources For all Thinks eLearning</h1>
-      <div className="container">
-        <div className="row">
-          {servicesData.map((service:any , index: React.Key | null | undefined) => (
-            <div key={index} className="col">
-              <div className='tl-1-service'>
-                <div className="tl-1-service-heading">
-                  <div className='tl-1-service-icon'>
-                    <img src={service.icon} alt="" width={40} height={40} />
+    <div>
+         
+      <section id='section-2'>
+        <div className={style.section1}>
+         <div className={style.heading}><h4 className='p-4'>{IT_Value}</h4> </div>
+          
+          <div className={style.box}>
+            {data.map((item :any)=>{ console.log(item.image)
+              return (
+                <div className={`${style.parent}  `}  >
+               <div className={style.thumb} style={item.image}> 
+                  <div className={style.anim}>
+                    <div className={style.opcity} >
+                      <div className={style.title} >
+
+                        <p>{item.title}</p>
+                        <div className={style.description}>
+                          {item.content}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <span className='tl-1-service-order-numb'>{service.order}</span>
                 </div>
-                <h5>{service.heading}</h5>
-                <h6 className='mt-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis omnis ipsam necessitatibus aliquid minima!.</h6>
               </div>
-            </div>
-          ))}
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    </div>
+   
+  )
 }
-
-Learning.propTypes = {
-  servicesData: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.string.isRequired,
-      order: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      heading:PropTypes.string.isRequired
-    })
-  ).isRequired
-};
-
 export default Learning;

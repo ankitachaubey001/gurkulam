@@ -1,0 +1,537 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, p {
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  section {
+    position: relative;
+    z-index: 1;
+    /* padding: 4rem 0; */
+    overflow: hidden;
+  }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    z-index: 100;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links a:hover {
+    color: #00f2fe;
+  }
+  
+  .cta-button {
+    background-color: #00f2fe;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    background-color: white;
+    color: #00f2fe;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+    }
+  }
+ /* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg?w=740&t=st=1727520098~exp=1727520698~hmac=51b85c613c87d4f2da2e95093aebadc1a470cff3740d88969e35fa6e6bcee08e') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out forwards;
+    color: white;
+  }
+  
+  .hero-title .highlight {
+    color: #00f2fe;
+    display: inline-block;
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    animation: fadeInUp 1.5s ease-out forwards;
+    color: whitesmoke;
+  }
+  
+  .cta-hero {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #00f2fe;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 2s ease-out forwards;
+  }
+  
+  .cta-hero:hover {
+    background-color: #0060FF;
+    transform: translateY(-3px);
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://img.freepik.com/free-photo/green-paint-brush-textured-background_53876-104801.jpg?w=740&t=st=1727520064~exp=1727520664~hmac=1c647cec0fb29c964fca93354b7324a50d1a7219063c4e6a2542444dca02702c') repeat;
+    opacity: 0.2;
+    animation: moveParticles 30s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes moveParticles {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+.courses-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f0f4fd 0%, #d6e4fc 100%);
+  text-align: center;
+  height: 90vh;
+}
+
+.courses-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.courses-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background-color: #0060FF;
+  display: block;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-top: 50px;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+.course-image {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
+
+
+.course-info {
+  padding: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .course-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+  .enroll-btn:hover {
+    background-color: #4facfe;
+  }
+  .testimonials-section {
+    background-color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonial-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .testimonial-card p {
+    font-size: 1.2rem;
+    color: #555;
+    font-style: italic;
+  }
+  
+  .testimonial-card h4 {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 1rem;
+  }
+  .footer {
+    position: relative;
+    z-index: 1;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+  }
+  
+  .footer p {
+    margin-bottom: 1rem;
+  }
+  
+  .footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer .social-links li {
+    list-style: none;
+  }
+  
+  .footer .social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer .social-links a:hover {
+    color: #00f2fe;
+  }
+  
+  .footer p {
+    font-size: 0.9rem;
+  }
+  .why-choose-us {
+    background-color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    /* height: 100vh; */
+  }
+  
+  .why-choose-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    position: relative;
+  }
+  
+  .why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background-color: #00f2fe;
+    border-radius: 2px;
+    animation: growLine 1.5s ease-in-out;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 70px;
+  }
+  
+  .feature-card {
+    background-color: #f9f9f9;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  @keyframes growLine {
+    from { width: 0; }
+    to { width: 80px; }
+  }
+
+  
+  h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  h1::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: #0060FF;
+    display: block;
+    margin: 1rem auto 0;
+    border-radius: 2px;
+  }
+  
+  .swiper {
+    z-index: 2;
+  position: relative;
+  }
+  
+  .swiper-slide {
+    display: flex !important;
+    justify-content:space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .kenburns {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    /* transition: transform 0.5s ease-in-out; */
+  }
+  
+  /* .kenburns-top {
+    transform: scale(1.1);
+  }
+  
+  .swiper-slide:hover .kenburns-top {
+    transform: scale(1);
+  } */
+  
+  .captionMedium {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  h5 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .mb-3 {
+    display: flex;
+    gap: 0.2rem;
+  }
+  
+  .mb-3 svg {
+    width: 20px;
+    height: 20px;
+    /* transition: transform 0.3s ease-in-out; */
+  }
+  
+  /* .mb-3 svg:hover {
+    transform: scale(1.2);
+  } */
+  
+  .swiper-button-prev, .swiper-button-next {
+    color: #0060FF;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .col-md-6 {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .kenburns {
+      margin-bottom: 2rem;
+    }
+  }
+                

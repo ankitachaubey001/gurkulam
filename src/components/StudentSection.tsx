@@ -36,7 +36,7 @@ const slides = [
 
 const StudentSection = () => {
     return (
-        <section className='section_two mb-5' style={{ background: "white" }}>
+        <section className=' mb-5' style={{ background: "white" }}>
             <div className="container">
                 <h1 className='text-center pt-5 pb-5'>What Student Says?</h1>
                 <Swiper
@@ -75,7 +75,6 @@ const StudentSection = () => {
                     ))}
                 </Swiper>
             </div>
-            <BackTop/>
         </section>
     );
 };

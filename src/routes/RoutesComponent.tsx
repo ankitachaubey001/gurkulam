@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Login from '../pages/Login'
 import Dashboard from '../pages/Dashboard'
 import Register from '../pages/Register'
+import BirthdaySurprise from '../pages/BirthdaySurprise'
 
 const RoutesComponents = () => {
   return (
@@ -13,6 +14,7 @@ const RoutesComponents = () => {
  <Route path="/" element={<Login />} />
  <Route path="/dashboard" element={<Dashboard />} />
  <Route path="/registeryyyy" element={<Register />} />
+ <Route path="/birthday" element={<BirthdaySurprise />} />
 
 
     </Routes>

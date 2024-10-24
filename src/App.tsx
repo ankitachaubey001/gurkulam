@@ -1,7 +1,10 @@
 import React from 'react';
 import './App.css';
-import './styles/public.css';
-import './styles/globle.css'
+// import './styles/public.css';
+// import './styles/globle.css'
+import './styles/section.css'
+import './styles/resposiveness.css'
+
 import { BrowserRouter } from 'react-router-dom';
 import RoutesComponents from './routes/RoutesComponent';
 import { initializeApp } from "firebase/app";

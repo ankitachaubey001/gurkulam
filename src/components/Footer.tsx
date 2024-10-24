@@ -1,12 +1,15 @@
 import React from 'react';
-import Button from './Button';
 
-const Footer = ({title , onClick}:{title:string , onClick:()=>void}) => {
+export const Footer = () => {
   return (
     <footer className="footer">
-          <Button title={title} onClick={onClick}/>
+      <p>Follow us on</p>
+      <ul className="social-links">
+        <li><a href="#facebook">Facebook</a></li>
+        <li><a href="#twitter">Twitter</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+      </ul>
+      <p>&copy; 2024 AI Global Study. All rights reserved.</p>
     </footer>
   );
 };
-
-export default Footer;

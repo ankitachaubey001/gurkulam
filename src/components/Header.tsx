@@ -1,40 +1,29 @@
+import React, { useState } from 'react';
 
-import React, { useEffect, useRef, useState } from 'react'
-import Dropdown from './Dropdown';
-import { FaUserCircle } from 'react-icons/fa';
-// import logo from '../assets/images/ai-logo.svg'
-const Header = ({ title }: { title?: string }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
-      setIsDropdownOpen(false)
-    }
-  }
+export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-  <div className="header-container">
-    <div className="d-flex align-items-center justify-content-between flex-row main_header">
-      {/* <img src={logo} className="loginIcon" /> */}
-      <h1 className="heading-text text-center text-dark text-uppercase">{title}</h1>
-      <div onClick={() => setIsDropdownOpen(!isDropdownOpen)}  className="position-relative d-flex align-items-center justify-content-center flex-column dropMain" ref={dropdownRef}>
-        <FaUserCircle className="profileIcon" style={{ cursor: 'pointer' }} />
-        {isDropdownOpen && <Dropdown />}
-      </div>
+    <header>
+      <nav className="navbar">
+        <div className="logo">AI Global Study</div>
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <button className="cta-button">Enroll Now</button>
+        <div className="hamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
-          {/* <div className="borderImage" /> */}
-  </div>
-   
-  )
-}
-
-export default Header
+      </nav>
+    </header>
+  );
+};

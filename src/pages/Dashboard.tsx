@@ -1,10 +1,12 @@
-import Details from '../components/Details';
+import services from '../assets/service.png';
+import services2 from '../assets/service2.png';
+import { Courses } from '../components/Courses';
+import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
+import { HeroSection } from '../components/HeroSection';
 import Learning from '../components/Learning';
-import Mode from '../components/mode';
-import services from '../assets/service.png'
-import services2 from '../assets/service2.png'
 import StudentSection from '../components/StudentSection';
-import BackTop from '../components/BackTop';
+import { WhyChooseUs } from '../components/WhyChooseUs';
 const Dashboard = () => {
   const servicesData = [
     { icon: services, order: '01', heading:'Conceptual clarity through visualisation' },
@@ -13,10 +15,15 @@ const Dashboard = () => {
   ];
   return (
     <>
-   <Details/>
-   <Learning servicesData={servicesData}/>
-   <StudentSection/>
-   <BackTop/>
+  <div className="App">
+      <Header />
+      <HeroSection />
+      {/* <Courses /> */}
+      <Learning />
+      <StudentSection/>
+      <WhyChooseUs/>
+      <Footer />
+    </div>
    </>
   )
 }
